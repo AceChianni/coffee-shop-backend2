@@ -47,3 +47,14 @@ The server will run at `http://localhost:3000`.
 
 ### DELETE /products/:id: Delete a product by ID
 ![DELETE /products/:id: Delete a product by ID](assets/DELETE-productid.jpg)
+
+## AUTH Screenshots
+
+### POST /auth/register: Register a new user
+![POST /auth/register: Register a new user](assets/auth/POST-auth;register.jpg)
+
+### POST /auth/login: Login a user
+![POST /auth/login: Login a user](assets/auth/POST-auth;login.jpg)
+
+### GET /protectedroute: Access a protected route (requires JWT authentication)
+![GET /protectedroute: Access a protected route](assets/auth/GET-protectedroute.jpg)
