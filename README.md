@@ -13,5 +13,5 @@ A simple backend server for managing products using Express and MongoDB.
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/coffee-shop-backend.git
+   git clone https://github.com/yourusername/coffee-shop-backend2.git
    cd coffee-shop-backend
