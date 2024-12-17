@@ -18,7 +18,6 @@ mongoose
   .catch((error) => console.error('Error connecting to MongoDB:', error));
 
 // Import Routes
-const productRoutes = require('./routes/products');
 app.use('/products', productRoutes);
 
 // Start Server
