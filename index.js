@@ -23,7 +23,6 @@ app.use('/products', productRoutes);
 app.get('/', (req, res) => {
     res.send('Welcome to the Coffee Shop');
   });
-  
 // Start Server
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
