@@ -2,6 +2,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const productRoutes = require('./routes/products');
+app.use('/products', productRoutes);
 
 const app = express();
 const port = 3000;
