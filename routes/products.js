@@ -1,7 +1,5 @@
-// routes/products.js
-const Router = require('express').Router;
+const router = require('express').Router();
 const Product = require('../models/product');
-const router = Router();
 
 // Create a new product
 router.post('/', async (req, res) => {
