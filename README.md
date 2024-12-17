@@ -1,5 +1,3 @@
-# coffee-shop-backend2
-
 # Coffee Shop Backend
 
 A simple backend server for managing products using Express and MongoDB.
@@ -12,6 +10,40 @@ A simple backend server for managing products using Express and MongoDB.
 ## Setup Instructions
 
 1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/coffee-shop-backend2.git
-   cd coffee-shop-backend
+
+   `git clone https://github.com/yourusername/coffee-shop-backend2.git`
+
+   `cd coffee-shop-backend2`
+
+2. **Install Dependencies**
+
+   `npm install`
+
+3. **Setup Environment Variables**
+
+   Create a `.env` file in the root directory and add your MongoDB URI like so:
+
+
+4. **Start the Server**
+
+`npm start`
+
+The server will run at `http://localhost:3000`.
+
+
+## API Endpoint Screenshots
+
+### POST /products: Create a new product
+![POST /products: Create a new product](assets/POST-products.jpg)
+
+### GET /products: Get all products
+![GET /products: Get all products](assets/GET-products.jpg)
+
+### GET /products/:id: Get a single product by ID
+![GET /products/:id: Get a single product by ID](assets/GET-id.jpg)
+
+### PUT /products/:id: Update a product by ID
+![PUT /products/:id: Update a product by ID](assets/PUT-productid.jpg)
+
+### DELETE /products/:id: Delete a product by ID
+![DELETE /products/:id: Delete a product by ID](assets/DELETE-productid.jpg)
