@@ -3,7 +3,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const productRoutes = require('./routes/products');
-// app.use('/products', productRoutes);
 
 const app = express();
 const port = 3000;
@@ -20,6 +19,11 @@ mongoose
 // Import Routes
 app.use('/products', productRoutes);
 
+// Default route to welcome users
+app.get('/', (req, res) => {
+    res.send('Welcome to the Coffee Shop');
+  });
+  
 // Start Server
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
