@@ -6,6 +6,7 @@ const productRoutes = require('./routes/products');
 const authRoutes = require('./routes/auth');
 const auth = require('./middleware/auth');
 const userRoutes = require('./routes/users');
+const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 const port = 3000;
