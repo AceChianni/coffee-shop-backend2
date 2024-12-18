@@ -14,14 +14,17 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Get all products
+// Get all products or filter by category
 router.get('/', async (req, res) => {
   try {
-    const products = await Product.find();
+    const { category } = req.query;
+    const filter = category ? { category } : {};
+    const products = await Product.find(filter);
     res.json(products);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+
 });
 
 // Get a single product by ID

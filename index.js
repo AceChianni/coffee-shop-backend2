@@ -5,6 +5,7 @@ require('dotenv').config();
 const productRoutes = require('./routes/products');
 const authRoutes = require('./routes/auth');
 const auth = require('./middleware/auth');
+const userRoutes = require('./routes/users');
 
 const app = express();
 const port = 3000;
@@ -21,6 +22,7 @@ mongoose
 // Import Routes
 app.use('/products', productRoutes); 
 app.use('/auth', authRoutes); 
+app.use('/users', auth, userRoutes);
 
 // Protect product routes with authentication middleware
 app.use('/products', auth, productRoutes);
