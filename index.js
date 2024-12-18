@@ -27,6 +27,9 @@ app.use('/users', auth, userRoutes);
 // Protect product routes with authentication middleware
 app.use('/products', auth, productRoutes);
 
+// Use the error handling middleware
+app.use(errorHandler);
+
 // Default route to welcome users
 app.get('/', (req, res) => {
   res.send('Welcome to the Coffee Shop');
