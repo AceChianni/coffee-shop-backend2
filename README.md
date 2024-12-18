@@ -48,6 +48,10 @@ The server will run at `http://localhost:3000`.
 ### DELETE /products/:id: Delete a product by ID
 ![DELETE /products/:id: Delete a product by ID](assets/DELETE-productid.jpg)
 
+
+
+____________________________________________________________________________
+
 ## AUTH Screenshots
 
 ### POST /auth/register: Register a new user
@@ -58,3 +62,45 @@ The server will run at `http://localhost:3000`.
 
 ### GET /protectedroute: Access a protected route (requires JWT authentication)
 ![GET /protectedroute: Access a protected route](assets/auth/GET-protectedroute.jpg)
+
+
+________________________________________________________________________
+
+## DAY3 Screenshots
+### GET /users: Get All Users (Admin Only)  
+![GET /users: Get All Users (Admin Only)](assets/day3/Get_All_Users_(Admin).jpg)  
+
+---
+
+### GET /users/:id: Get a Single User by ID  
+![GET /users/:id: Get a Single User by ID](assets/day3/Get_Single_User_by_ID.jpg)  
+
+---
+
+### PUT /users/:id: Update a User by ID  
+![PUT /users/:id: Update a User by ID](assets/day3/Update_User_by_ID.jpg)  
+
+---
+
+### DELETE /users/:id: Delete a User by ID (Admin Only)  
+![DELETE /users/:id: Delete a User by ID (Admin Only)](assets/day3/Delete_User_by_ID.jpg)  
+
+---
+
+### GET /products: Get All Products or Filter by Category  
+![GET /products: Get All Products or Filter by Category](assets/day3/Get_by_Category.jpg)  
+
+---
+
+### GET /products/:id: Get a Single Product by ID  
+![GET /products/:id: Get a Single Product by ID](assets/day3/Get_Product_by_ID.jpg)  
+
+---
+
+### PUT /products/:id: Update a Product by ID  
+![PUT /products/:id: Update a Product by ID](assets/day3/Update_Product_by_ID.jpg)  
+
+---
+
+### DELETE /products/:id: Delete a Product by ID  
+![DELETE /products/:id: Delete a Product by ID](assets/day3/Delete_Product_by_ID.jpg)  
