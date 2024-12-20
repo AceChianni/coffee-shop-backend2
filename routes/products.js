@@ -1,31 +1,38 @@
 // routes/products.js
-
 const router = require('express').Router();
 const { body, query, validationResult } = require('express-validator');
 const Product = require('../models/product');
 const upload = require('../middleware/upload');
 const auth = require('../middleware/auth');
 const role = require('../middleware/role');
+const { validateProduct } = require('../middleware/validate');
 
 // Create a new product with image upload (admin only)
-router.post('/', auth, role('admin'), upload, async (req, res) => {
-  try {
-    const { name, description, price, category, stock } = req.body;
-    const imageUrl = req.file ? `/uploads/${req.file.filename}` : '';
-    const product = new Product({
-      name,
-      description,
-      price,
-      category,
-      stock,
-      imageUrl,
-    });
-    await product.save();
-    res.status(201).json(product);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
+router.post(
+  '/', 
+  auth, 
+  role('admin'), 
+  upload, 
+  validateProduct,  
+  async (req, res) => {
+    try {
+      const { name, description, price, category, stock } = req.body;
+      const imageUrl = req.file ? `/uploads/${req.file.filename}` : '';
+      const product = new Product({
+        name,
+        description,
+        price,
+        category,
+        stock,
+        imageUrl,
+      });
+      await product.save();
+      res.status(201).json(product);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
   }
-});
+);
 
 // Get all products with pagination (accessible by anyone)
 router.get('/', async (req, res) => {
@@ -64,7 +71,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Update a product by ID (admin only)
-router.put('/:id', auth, role('admin'), upload, async (req, res) => {
+router.put('/:id', auth, role('admin'), upload, validateProduct, async (req, res) => {
   try {
     const { name, description, price, category, stock } = req.body;
     const imageUrl = req.file
