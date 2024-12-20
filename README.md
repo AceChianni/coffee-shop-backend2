@@ -109,7 +109,7 @@ ________________________________________________________________________
 ## DAY 4 SCREEN SHOTS
 
 ### Create a Product with Image Upload:
-(assets/day4/Post-WithImage.jpg)
+![Post new product with image](assets/day4/Post-WithImage.jpg)
 
 ### Get All Products with Pagination and Filtering:
-(assets/day4/Get-Pagination.jpg)
+![Get filtered products](assets/day4/Get-Pagination.jpg)
