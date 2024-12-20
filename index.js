@@ -1,4 +1,4 @@
-// // index.js
+// index.js
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -16,11 +16,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware
-app.use(express.json()); 
+app.use(express.json());
+app.use(cors());
 
 // Serve static files
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
 
 // Connect to MongoDB
 mongoose
@@ -33,25 +33,13 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Coffee Shop');
 });
 
-
 // Routes
-app.use('/auth', authRoutes); // Authentication routes
-app.use('/users', auth, userRoutes); // User routes with authentication
-app.use('/products', auth, productRoutes); // Product routes protected with authentication
+app.use('/auth', authRoutes); 
+app.use('/users', auth, userRoutes); 
+app.use('/products', auth, productRoutes); 
 
-
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-// Protect product routes with authentication middleware
-app.use('/products', auth, productRoutes);
-
-// Use the error handling middleware
+// Error handling middleware
 app.use(errorHandler);
-
-// Default route to welcome users
-app.get('/', (req, res) => {
-  res.send('Welcome to the Coffee Shop');
-});
 
 // Start Server
 app.listen(port, () => {
