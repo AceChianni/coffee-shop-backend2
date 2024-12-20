@@ -35,7 +35,7 @@ router.post(
 );
 
 // Get all products with pagination (accessible by anyone)
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
     const {
       page = 1,
