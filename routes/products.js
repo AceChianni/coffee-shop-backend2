@@ -1,12 +1,14 @@
-// // routes/products.js 
+// routes/products.js
 
 const router = require('express').Router();
 const { body, query, validationResult } = require('express-validator');
 const Product = require('../models/product');
 const upload = require('../middleware/upload');
+const auth = require('../middleware/auth');
+const role = require('../middleware/role');
 
-// Create a new product with image upload
-router.post('/', upload, async (req, res) => {
+// Create a new product with image upload (admin only)
+router.post('/', auth, role('admin'), upload, async (req, res) => {
   try {
     const { name, description, price, category, stock } = req.body;
     const imageUrl = req.file ? `/uploads/${req.file.filename}` : '';
@@ -25,7 +27,7 @@ router.post('/', upload, async (req, res) => {
   }
 });
 
-// Get all products with pagination
+// Get all products with pagination (accessible by anyone)
 router.get('/', async (req, res) => {
   try {
     const {
@@ -48,7 +50,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get a single product by ID
+// Get a single product by ID (accessible by anyone)
 router.get('/:id', async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -61,8 +63,8 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Update a product by ID
-router.put('/:id', upload, async (req, res) => {
+// Update a product by ID (admin only)
+router.put('/:id', auth, role('admin'), upload, async (req, res) => {
   try {
     const { name, description, price, category, stock } = req.body;
     const imageUrl = req.file
@@ -82,8 +84,8 @@ router.put('/:id', upload, async (req, res) => {
   }
 });
 
-// Delete a product by ID
-router.delete('/:id', async (req, res) => {
+// Delete a product by ID (admin only)
+router.delete('/:id', auth, role('admin'), async (req, res) => {
   try {
     const product = await Product.findByIdAndDelete(req.params.id);
     if (!product) {
