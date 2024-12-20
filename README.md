@@ -68,7 +68,7 @@ ________________________________________________________________________
 
 ## DAY3 Screenshots
 ### GET /users: Get All Users (Admin Only)  
-![GET /users: Get All Users (Admin Only)](assets/day3/Get_All_Users_(Admin).jpg)  
+![GET /users: Get All Users (Admin Only)](assets/day3/Get-AllUsers(Admin).jpg)  
 
 ---
 
